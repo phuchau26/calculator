@@ -1,0 +1,298 @@
+/* ======================== */
+/* 🎨 STYLE HIỆN ĐẠI CALCULATOR */
+/* ======================== */
+
+/* Toàn trang */
+body {
+  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Poppins", "Segoe UI", Tahoma, sans-serif;
+  margin: 0;
+}
+
+/* Container chính */
+.app-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  padding: 25px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(25px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.8s ease;
+}
+
+/* Hiệu ứng mờ dần xuất hiện */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Khối máy tính */
+.calculator {
+  width: max-content;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Header */
+.calculator-header {
+  margin-bottom: 15px;
+}
+
+.header-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ffffffcc;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Màn hình hiển thị */
+.calculator-screen {
+  width: 100%;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  color: #000000;
+  text-align: right;
+  padding: 15px 20px;
+  font-size: 2.2rem;
+  font-weight: 500;
+  box-shadow: inset 0 2px 8px rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.calculation-expression {
+  font-size: 1rem;
+  color: #000000aa;
+  margin-bottom: 5px;
+}
+
+/* Grid các nút */
+.calculator-keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 12px;
+  width: 100%;
+  justify-items: center; /* Căn giữa theo chiều ngang */
+  align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+/* Nút chung */
+button {
+  height: 65px;
+  width: 100px;
+  border-radius: 12px;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #1e293b;
+  background: #f9fafb;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  font-weight: 500;
+}
+
+/* Hiệu ứng ánh sáng khi hover */
+button::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 300%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  transform: translateY(0);
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.4s;
+}
+
+button:hover::before {
+  opacity: 1;
+  transform: translateY(-30%);
+}
+
+button:hover {
+  transform: translateY(-3px);
+  background: #ffffff;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+  transform: scale(0.97);
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Nút toán tử */
+.operator {
+  background: #e0e7ff;
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+.operator:hover {
+  background: #c7d2fe;
+}
+
+/* Nút xóa */
+.all-clear {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.all-clear:hover {
+  background: #fecaca;
+}
+
+/* Nút bằng */
+.equal-sign {
+  background: linear-gradient(135deg, #34d399, #059669);
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 3px 8px rgba(52, 211, 153, 0.35);
+  transition: all 0.2s ease;
+}
+
+.equal-sign:hover {
+  background: linear-gradient(
+    135deg,
+    #00b643,
+    #047857
+  ); /* xanh dịu hơn khi hover */
+  box-shadow: 0 4px 12px rgba(70, 255, 187, 0.45);
+  transform: translateY(-1px);
+}
+
+.equal-sign:active {
+  transform: scale(0.97);
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* ---------------------------- */
+/* 🔹 PHẦN LỊCH SỬ */
+/* ---------------------------- */
+.history-panel {
+  width: 220px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 15px;
+  box-shadow: inset 0 1px 8px rgba(255, 255, 255, 0.15);
+  color: #fff;
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.history-header {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+}
+
+.history-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+  overflow-y: auto;
+  overflow-x: hidden; /* ẩn scroll ngang */
+  word-wrap: break-word;
+  -webkit-overflow-scrolling: touch;
+}
+
+.no-history {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Mục lịch sử */
+.history-item {
+  padding: 10px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: normal; /* cho phép xuống dòng */
+}
+
+.history-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(3px);
+}
+
+.history-expression {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.history-result {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: right;
+}
+
+/* ======================== */
+/* 📱 RESPONSIVE DESIGN */
+/* ======================== */
+
+@media (max-width: 768px) {
+  body {
+    background: linear-gradient(145deg, #8ec5fc, #e0c3fc);
+  }
+
+  .app-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .history-panel {
+    display: none; /* Ẩn thanh lịch sử trên tablet & mobile */
+  }
+
+  .calculator {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .calculator-screen {
+    font-size: 1.8rem;
+    height: 80px;
+  }
+
+  button {
+    height: 60px;
+    width: 80px;
+    font-size: 1.1rem;
+  }
+}

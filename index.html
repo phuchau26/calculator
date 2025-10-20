@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <div class="calculator">
+            <div class="calculator-header">
+                <div class="header-title">PH Calculator</div>
+            </div>
+            <div class="calculator-screen">
+                <div class="calculation-expression"></div>
+                <div class="current-value">0</div>
+            </div>
+            <div class="calculator-keys">
+                <button class="operator" value="%">%</button>
+                <button value="clear-entry">CE</button>
+                <button class="all-clear" value="all-clear">C</button>
+                <button class="operator" value="backspace">⌫</button>
+                <button class="operator" value="1/x">¹/x</button>
+                <button class="operator" value="x^2">x²</button>
+                <button class="operator" value="sqrt">√x</button>
+                <button class="operator" value="/">÷</button>
+                <button value="7">7</button>
+                <button value="8">8</button>
+                <button value="9">9</button>
+                <button class="operator" value="*">×</button>
+                <button value="4">4</button>
+                <button value="5">5</button>
+                <button value="6">6</button>
+                <button class="operator" value="-">-</button>
+                <button value="1">1</button>
+                <button value="2">2</button>
+                <button value="3">3</button>
+                <button class="operator" value="+">+</button>
+                <button value="negate">+/-</button>
+                <button value="0">0</button>
+                <button value=".">.</button>
+                <button class="equal-sign" value="=">=</button>
+            </div>
+        </div>
+
+        <div class="history-panel">
+            <div class="history-header">History</div>
+            <ul class="history-list">
+                <p class="no-history">There's no history yet.</p>
+            </ul>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
