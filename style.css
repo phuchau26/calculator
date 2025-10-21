@@ -2,7 +2,7 @@
 /* 🎨 STYLE HIỆN ĐẠI CALCULATOR */
 /* ======================== */
 
-/* Toàn trang */
+/* 🌈 Toàn trang */
 body {
   background: linear-gradient(135deg, #74ebd5, #acb6e5);
   display: flex;
@@ -13,7 +13,7 @@ body {
   margin: 0;
 }
 
-/* Container chính */
+/* 🧱 Container chính */
 .app-container {
   display: flex;
   align-items: flex-start;
@@ -26,7 +26,7 @@ body {
   animation: fadeIn 0.8s ease;
 }
 
-/* Hiệu ứng mờ dần xuất hiện */
+/* ✨ Hiệu ứng mờ dần xuất hiện */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -38,17 +38,17 @@ body {
   }
 }
 
-/* Khối máy tính */
+/* 🔢 Khối máy tính */
 .calculator {
-  width: max-content;
   display: flex;
-  width: 100%;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  width: 100%;
+  max-width: 440px;
 }
 
-/* Header */
+/* 🧩 Header */
 .calculator-header {
   margin-bottom: 15px;
 }
@@ -60,13 +60,13 @@ body {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Màn hình hiển thị */
+/* 🖥️ Màn hình hiển thị */
 .calculator-screen {
   width: 100%;
   height: 100px;
   background: rgba(255, 255, 255, 0.25);
   border-radius: 12px;
-  color: #000000;
+  color: #000;
   text-align: right;
   padding: 15px 20px;
   font-size: 2.2rem;
@@ -84,18 +84,18 @@ body {
   margin-bottom: 5px;
 }
 
-/* Grid các nút */
+/* 🔘 Grid các nút */
 .calculator-keys {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 12px;
+  gap: 12px;
   width: 100%;
-  justify-items: center; /* Căn giữa theo chiều ngang */
-  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-items: center;
+  align-items: center;
 }
 
-/* Nút chung */
-button {
+/* 🎛️ Nút chung */
+.calculator-keys button {
   height: 65px;
   width: 100px;
   border-radius: 12px;
@@ -109,10 +109,11 @@ button {
   position: relative;
   overflow: hidden;
   font-weight: 500;
+  user-select: none;
 }
 
-/* Hiệu ứng ánh sáng khi hover */
-button::before {
+/* ✨ Hiệu ứng ánh sáng khi hover */
+.calculator-keys button::before {
   content: "";
   position: absolute;
   top: -100%;
@@ -125,28 +126,27 @@ button::before {
     rgba(255, 255, 255, 0.5),
     transparent
   );
-  transform: translateY(0);
   opacity: 0;
   transition: opacity 0.3s, transform 0.4s;
 }
 
-button:hover::before {
+.calculator-keys button:hover::before {
   opacity: 1;
   transform: translateY(-30%);
 }
 
-button:hover {
+.calculator-keys button:hover {
   transform: translateY(-3px);
   background: #ffffff;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
-button:active {
+.calculator-keys button:active {
   transform: scale(0.97);
   box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Nút toán tử */
+/* ➕ Nút toán tử */
 .operator {
   background: #e0e7ff;
   color: #1d4ed8;
@@ -157,7 +157,7 @@ button:active {
   background: #c7d2fe;
 }
 
-/* Nút xóa */
+/* ❌ Nút xóa */
 .all-clear {
   background: #fee2e2;
   color: #b91c1c;
@@ -167,21 +167,17 @@ button:active {
   background: #fecaca;
 }
 
-/* Nút bằng */
+/* 🟩 Nút bằng */
 .equal-sign {
   background: linear-gradient(135deg, #34d399, #059669);
-  color: #ffffff;
+  color: #fff;
   font-weight: 600;
   box-shadow: 0 3px 8px rgba(52, 211, 153, 0.35);
   transition: all 0.2s ease;
 }
 
 .equal-sign:hover {
-  background: linear-gradient(
-    135deg,
-    #00b643,
-    #047857
-  ); /* xanh dịu hơn khi hover */
+  background: linear-gradient(135deg, #00b643, #047857);
   box-shadow: 0 4px 12px rgba(70, 255, 187, 0.45);
   transform: translateY(-1px);
 }
@@ -191,9 +187,7 @@ button:active {
   box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* ---------------------------- */
-/* 🔹 PHẦN LỊCH SỬ */
-/* ---------------------------- */
+/* 🕘 PHẦN LỊCH SỬ */
 .history-panel {
   width: 220px;
   padding: 15px;
@@ -201,11 +195,19 @@ button:active {
   border-radius: 15px;
   box-shadow: inset 0 1px 8px rgba(255, 255, 255, 0.15);
   color: #fff;
-  height: 480px;
+  height: 600px;
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 80px;
 }
+
+.history-panel .history-headers {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+  align-items: center;
+}
+
 
 .history-header {
   font-size: 1.1rem;
@@ -214,6 +216,16 @@ button:active {
   border-bottom: 2px solid rgba(255, 255, 255, 0.3);
   padding-bottom: 8px;
   margin-bottom: 10px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  transition: 0.2s ease 0s;
+}
+
+.history-header:hover{
+  cursor: pointer;
+  border-bottom: 2px solid rgba(88, 205, 255, 0.3);
+  transition: 0.2s ease 0s;
 }
 
 .history-list {
@@ -222,7 +234,6 @@ button:active {
   margin: 0;
   flex-grow: 1;
   overflow-y: auto;
-  overflow-x: hidden; /* ẩn scroll ngang */
   word-wrap: break-word;
   -webkit-overflow-scrolling: touch;
 }
@@ -234,13 +245,12 @@ button:active {
   margin-top: 40px;
 }
 
-/* Mục lịch sử */
 .history-item {
   padding: 10px 8px;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
-  white-space: normal; /* cho phép xuống dòng */
+  white-space: normal;
 }
 
 .history-item:hover {
@@ -256,14 +266,13 @@ button:active {
 .history-result {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #ffffff;
+  color: #fff;
   text-align: right;
 }
 
 /* ======================== */
 /* 📱 RESPONSIVE DESIGN */
 /* ======================== */
-
 @media (max-width: 768px) {
   body {
     background: linear-gradient(145deg, #8ec5fc, #e0c3fc);
@@ -277,7 +286,7 @@ button:active {
   }
 
   .history-panel {
-    display: none; /* Ẩn thanh lịch sử trên tablet & mobile */
+    display: none;
   }
 
   .calculator {
@@ -290,7 +299,7 @@ button:active {
     height: 80px;
   }
 
-  button {
+  .calculator-keys button {
     height: 60px;
     width: 80px;
     font-size: 1.1rem;

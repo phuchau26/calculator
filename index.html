@@ -1,59 +1,177 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="app-container">
-        
-        <div class="calculator">
-            <div class="calculator-header">
-                <div class="header-title">PH Calculator</div>
-            </div>
-            <div class="calculator-screen">
-                <div class="calculation-expression"></div>
-                <div class="current-value">0</div>
-            </div>
-            <div class="calculator-keys">
-                <button class="operator" value="%">%</button>
-                <button value="clear-entry">CE</button>
-                <button class="all-clear" value="all-clear">C</button>
-                <button class="operator" value="backspace">⌫</button>
-                <button class="operator" value="1/x">¹/x</button>
-                <button class="operator" value="x^2">x²</button>
-                <button class="operator" value="sqrt">√x</button>
-                <button class="operator" value="/">÷</button>
-                <button value="7">7</button>
-                <button value="8">8</button>
-                <button value="9">9</button>
-                <button class="operator" value="*">×</button>
-                <button value="4">4</button>
-                <button value="5">5</button>
-                <button value="6">6</button>
-                <button class="operator" value="-">-</button>
-                <button value="1">1</button>
-                <button value="2">2</button>
-                <button value="3">3</button>
-                <button class="operator" value="+">+</button>
-                <button value="negate">+/-</button>
-                <button value="0">0</button>
-                <button value=".">.</button>
-                <button class="equal-sign" value="=">=</button>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PH Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-container">
+      <!-- Máy tính chính -->
+      <section class="calculator" aria-label="Máy tính cơ bản">
+        <header class="calculator-header">
+          <h1 class="header-title">PH Calculator</h1>
+        </header>
+
+        <div class="calculator-screen" aria-live="polite">
+          <div
+            class="calculation-expression"
+            aria-label="Biểu thức tính toán"
+          ></div>
+          <div class="current-value" aria-label="Kết quả hiện tại">0</div>
         </div>
 
-        <div class="history-panel">
-            <div class="history-header">History</div>
-            <ul class="history-list">
-                <p class="no-history">There's no history yet.</p>
-            </ul>
-        </div>
+        <div
+          class="calculator-keys"
+          role="group"
+          aria-label="Các phím chức năng"
+        >
+          <!-- Memory buttons moved here to match Windows layout -->
+          <button
+            type="button"
+            value="mr"
+            class="memory-btn"
+            aria-label="Memory Recall"
+          >
+            MR
+          </button>
+          <button
+            type="button"
+            value="mplus"
+            class="memory-btn"
+            aria-label="Memory Add"
+          >
+            M+
+          </button>
+          <button
+            type="button"
+            value="mminus"
+            class="memory-btn"
+            aria-label="Memory Subtract"
+          >
+            M-
+          </button>
+          <button
+            type="button"
+            value="ms"
+            class="memory-btn"
+            aria-label="Memory Store"
+          >
+            MS
+          </button>
 
-    </div>
+          <button
+            type="button"
+            class="operator"
+            value="%"
+            aria-label="Phần trăm"
+          >
+            %
+          </button>
+          <button type="button" value="clear-entry" aria-label="Xóa mục nhập">
+            CE
+          </button>
+          <button
+            type="button"
+            class="all-clear"
+            value="all-clear"
+            aria-label="Xóa tất cả"
+          >
+            C
+          </button>
+          <button
+            type="button"
+            class="operator"
+            value="backspace"
+            aria-label="Xóa ký tự cuối"
+          >
+            ⌫
+          </button>
+
+          <button
+            type="button"
+            class="operator"
+            value="1/x"
+            aria-label="Nghịch đảo"
+          >
+            ¹/x
+          </button>
+          <button
+            type="button"
+            class="operator"
+            value="x^2"
+            aria-label="Bình phương"
+          >
+            x²
+          </button>
+          <button
+            type="button"
+            class="operator"
+            value="sqrt"
+            aria-label="Căn bậc hai"
+          >
+            √x
+          </button>
+          <button type="button" class="operator" value="/" aria-label="Chia">
+            ÷
+          </button>
+
+          <button type="button" value="7">7</button>
+          <button type="button" value="8">8</button>
+          <button type="button" value="9">9</button>
+          <button type="button" class="operator" value="*" aria-label="Nhân">
+            ×
+          </button>
+
+          <button type="button" value="4">4</button>
+          <button type="button" value="5">5</button>
+          <button type="button" value="6">6</button>
+          <button type="button" class="operator" value="-" aria-label="Trừ">
+            −
+          </button>
+
+          <button type="button" value="1">1</button>
+          <button type="button" value="2">2</button>
+          <button type="button" value="3">3</button>
+          <button type="button" class="operator" value="+" aria-label="Cộng">
+            +
+          </button>
+
+          <button type="button" value="negate" aria-label="Đổi dấu">±</button>
+          <button type="button" value="0">0</button>
+          <button type="button" value="." aria-label="Dấu thập phân">.</button>
+          <button type="button" class="equal-sign" value="=" aria-label="Bằng">
+            =
+          </button>
+        </div>
+      </section>
+
+      <!-- Bảng phụ: chỉ hiển thị lịch sử; 'Bộ nhớ' là nhãn bên phải tiêu đề -->
+      <aside class="side-container" aria-label="Bảng phụ">
+        <section class="history-panel" aria-label="Lịch sử tính toán">
+          <header class="history-headers">
+            <button class="history-header" id="history-tab" data-target="history"
+              >Lịch sử</button
+            >
+            <button class="history-header" id="memory-tab" data-target="memory"
+              >Bộ nhớ</button
+            >
+          </header>
+
+          <!-- Memory panel inside history panel (hidden by default) -->
+          <div class="memory-panel-aside hidden" aria-label="Thông tin bộ nhớ">
+            <div class="memory-value">Không có</div>
+            <ul class="memory-list" role="list"></ul>
+          </div>
+
+          <ul class="history-list" role="list">
+            <li class="no-history">Chưa có lịch sử nào.</li>
+          </ul>
+        </section>
+      </aside>
+    </main>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
