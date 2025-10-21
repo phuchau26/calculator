@@ -167,14 +167,6 @@ body {
   background: #fecaca;
 }
 
-/* 🟩 Nút bằng */
-.equal-sign {
-  background: linear-gradient(135deg, #34d399, #059669);
-  color: #fff;
-  font-weight: 600;
-  box-shadow: 0 3px 8px rgba(52, 211, 153, 0.35);
-  transition: all 0.2s ease;
-}
 
 .equal-sign:hover {
   background: linear-gradient(135deg, #00b643, #047857);
