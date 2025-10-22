@@ -6,11 +6,9 @@
     <title>PH Calculator</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/png" href="./images/logo.png" />
-    
   </head>
   <body>
     <main class="app-container">
-      <!-- Máy tính chính -->
       <section class="calculator" aria-label="Máy tính cơ bản">
         <header class="calculator-header">
           <h1 class="header-title">PH Calculator</h1>
@@ -29,7 +27,6 @@
           role="group"
           aria-label="Các phím chức năng"
         >
-          <!-- Memory buttons moved here to match Windows layout -->
           <button
             type="button"
             value="mr"
@@ -149,19 +146,21 @@
         </div>
       </section>
 
-      <!-- Bảng phụ: chỉ hiển thị lịch sử; 'Bộ nhớ' là nhãn bên phải tiêu đề -->
       <aside class="side-container" aria-label="Bảng phụ">
         <section class="history-panel" aria-label="Lịch sử tính toán">
           <header class="history-headers">
-            <button class="history-header" id="history-tab" data-target="history"
-              >Lịch sử</button
+            <button
+              class="history-header"
+              id="history-tab"
+              data-target="history"
             >
-            <button class="history-header" id="memory-tab" data-target="memory"
-              >Bộ nhớ</button
-            >
+              Lịch sử
+            </button>
+            <button class="history-header" id="memory-tab" data-target="memory">
+              Bộ nhớ
+            </button>
           </header>
 
-          <!-- Memory panel inside history panel (hidden by default) -->
           <div class="memory-panel-aside hidden" aria-label="Thông tin bộ nhớ">
             <div class="memory-value">Không có</div>
             <ul class="memory-list" role="list"></ul>

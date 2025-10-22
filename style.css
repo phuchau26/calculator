@@ -1,8 +1,3 @@
-/* ======================== */
-/* 🎨 STYLE HIỆN ĐẠI CALCULATOR */
-/* ======================== */
-
-/* 🌈 Toàn trang */
 body {
   background: linear-gradient(135deg, #74ebd5, #acb6e5);
   display: flex;
@@ -13,7 +8,6 @@ body {
   margin: 0;
 }
 
-/* 🧱 Container chính */
 .app-container {
   display: flex;
   align-items: flex-start;
@@ -26,7 +20,6 @@ body {
   animation: fadeIn 0.8s ease;
 }
 
-/* ✨ Hiệu ứng mờ dần xuất hiện */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -38,7 +31,6 @@ body {
   }
 }
 
-/* 🔢 Khối máy tính */
 .calculator {
   display: flex;
   flex-direction: column;
@@ -48,7 +40,6 @@ body {
   max-width: 440px;
 }
 
-/* 🧩 Header */
 .calculator-header {
   margin-bottom: 15px;
 }
@@ -60,7 +51,6 @@ body {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* 🖥️ Màn hình hiển thị */
 .calculator-screen {
   width: 100%;
   height: 100px;
@@ -84,7 +74,6 @@ body {
   margin-bottom: 5px;
 }
 
-/* 🔘 Grid các nút */
 .calculator-keys {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -94,7 +83,6 @@ body {
   align-items: center;
 }
 
-/* 🎛️ Nút chung */
 .calculator-keys button {
   height: 65px;
   width: 100px;
@@ -112,7 +100,6 @@ body {
   user-select: none;
 }
 
-/* ✨ Hiệu ứng ánh sáng khi hover */
 .calculator-keys button::before {
   content: "";
   position: absolute;
@@ -146,7 +133,17 @@ body {
   box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* ➕ Nút toán tử */
+.calculator-keys button.key-pressed {
+  transform: translateY(-3px) !important;
+  background: #ffffff !important;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12) !important;
+}
+
+.calculator-keys button.key-pressed::before {
+  opacity: 1 !important;
+  transform: translateY(-30%) !important;
+}
+ 
 .operator {
   background: #e0e7ff;
   color: #1d4ed8;
@@ -157,7 +154,6 @@ body {
   background: #c7d2fe;
 }
 
-/* ❌ Nút xóa */
 .all-clear {
   background: #fee2e2;
   color: #b91c1c;
@@ -166,7 +162,6 @@ body {
 .all-clear:hover {
   background: #fecaca;
 }
-
 
 .equal-sign:hover {
   background: linear-gradient(135deg, #00b643, #047857);
@@ -179,7 +174,6 @@ body {
   box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* 🕘 PHẦN LỊCH SỬ */
 .history-panel {
   width: 220px;
   padding: 15px;
@@ -200,7 +194,6 @@ body {
   align-items: center;
 }
 
-
 .history-header {
   font-size: 1.1rem;
   font-weight: 600;
@@ -214,7 +207,7 @@ body {
   transition: 0.2s ease 0s;
 }
 
-.history-header:hover{
+.history-header:hover {
   cursor: pointer;
   border-bottom: 2px solid rgba(88, 205, 255, 0.3);
   transition: 0.2s ease 0s;
@@ -262,9 +255,6 @@ body {
   text-align: right;
 }
 
-/* ======================== */
-/* 📱 RESPONSIVE DESIGN */
-/* ======================== */
 @media (max-width: 768px) {
   body {
     background: linear-gradient(145deg, #8ec5fc, #e0c3fc);
